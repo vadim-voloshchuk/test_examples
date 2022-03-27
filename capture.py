@@ -1,6 +1,6 @@
 import numpy as np
 import cv2 as cv
-from interface import detect_image
+from check import recognize
 
 cap = cv.VideoCapture(0)
 if not cap.isOpened():
@@ -16,7 +16,7 @@ while True:
     # Our operations on the frame come here
     # gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     # Display the resulting frame
-    frame = detect_image(frame)
+    frame = recognize(frame)
     cv.imshow('frame', frame)
     if cv.waitKey(1) == ord('q'):
         break
